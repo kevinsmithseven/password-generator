@@ -48,22 +48,35 @@ function generatePassword() {
   //Need to validate that at least one type is selected - if not, then prompt user to select at least one type
 
   if (!(useLowerCaseLetters) && !(useUpperCaseLetters) && !(useNumbers) && !(useSpecialCharacters)) {
-    
+
     window.alert("Please select at least one value")
     return "Please Try Again"
-  } 
+  }
 
-  //Call function that generates password?
+  
   var userCharacters = [];
   var password = "";
-  if(useLowerCaseLetters){
+  if (useLowerCaseLetters) {
     userCharacters.push(...lowerCaseLetters);
     password += getRandomChar(lowerCaseLetters);
   }
-// duplicate for each of the types
+  if (useUpperCaseLetters) {
+    userCharacters.push(...UpperCaseLetters);
+    password += getRandomChar(UpperCaseLetters);
+  }
+  if (useNumbers) {
+    userCharacters.push(...numbersZer0ToNine);
+    password += getRandomChar(numbersZer0ToNine);
+  }
+  if (useSpecialCharacters) {
+    userCharacters.push(...selectedSpecialCharacters);
+    password += getRandomChar(selectedSpecialCharacters)
+  }
+  
+  // duplicate for each of the types
 
 
-  while(password.length < passwordLength){
+  while (password.length < passwordLength) {
     password += getRandomChar(userCharacters);
   }
 
@@ -71,13 +84,12 @@ function generatePassword() {
 }
 
 
-function getRandomChar(arr){
+function getRandomChar(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
 }
 
 
-//Need to iterate across arrays for random selections based on user selections
 
 
 
