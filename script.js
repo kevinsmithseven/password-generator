@@ -1,3 +1,31 @@
+// Arrays for lowercase, uppercase, numeric and special character values
+var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var UpperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var numbersZer0ToNine = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var selectedSpecialCharacters = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "<", ">", "?"]
+
+//Prompts asking the user to select which criteria to use in the password
+var useLowerCaseLetters = window.confirm("Would you like to include lowercase letters in your password?")
+var useUpperCaseLetters = window.confirm("Would you like to include uppercase letters in your password?")
+var useNumbers = window.confirm("Would you like to include numbers in your password?")
+var useSpecialCharacters = window.confirm("Would you like to include special characters in your password?")
+
+//Prompt for length of password
+var passwordLength = window.prompt("Choose a password length between 8 and 128 characters.")
+
+//Need to validate: length is in between 8 and 128 and whether the value type is a number
+
+
+
+
+
+
+
+
+
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
