@@ -5,7 +5,7 @@ var numbersZer0ToNine = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var selectedSpecialCharacters = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "<", ">", "?"]
 
 
-//Need to validate: length is in between 8 and 128 and whether the value type is a number
+// Function to validate if value entered is a number and alert user if not
 
 function isNumber(passwordLength) {
   if (isNaN(passwordLength)) {
@@ -16,7 +16,7 @@ function isNumber(passwordLength) {
   return true;
 }
 
-//Determine if password length and type is correct, if not ask them to enter a valid number
+// Function to determine if the value entered for the length is within range and alert user if not
 function numberIsInRange(passwordLength) {
 
   if (passwordLength < 8 || passwordLength > 128) {
@@ -27,7 +27,7 @@ function numberIsInRange(passwordLength) {
   return true;
 }
 
-//Prompts asking the user to select which criteria to use in the password
+// Generate password function
 function generatePassword() {
   //Prompt for length of password
   var passwordLength = window.prompt("Choose a password length between 8 and 128 characters.")
@@ -35,25 +35,28 @@ function generatePassword() {
     return false;
   }
 
+  // Convert passwordlength to a number
   passwordLength = Number(passwordLength);
 
+  
   if (!numberIsInRange(passwordLength)) {
     return "Please Try Again";
   }
 
+  // Ask users to select which values to use in password
   var useLowerCaseLetters = window.confirm("Click OK to include lowercase letters in your password?")
   var useUpperCaseLetters = window.confirm("Click OK to include uppercase letters in your password?")
   var useNumbers = window.confirm("Click OK to include numbers in your password?")
   var useSpecialCharacters = window.confirm("Click OK to include special characters in your password?")
-  //Need to validate that at least one type is selected - if not, then prompt user to select at least one type
-
+  
+// Ensure that users selected at least one type from prompts and alert if not
   if (!(useLowerCaseLetters) && !(useUpperCaseLetters) && !(useNumbers) && !(useSpecialCharacters)) {
 
     window.alert("Please select at least one value")
     return "Please Try Again"
   }
 
-  
+  // create empty array and populate from getRandomChar based on user selection
   var userCharacters = [];
   var password = "";
   if (useLowerCaseLetters) {
@@ -73,9 +76,7 @@ function generatePassword() {
     password += getRandomChar(selectedSpecialCharacters)
   }
   
-  // duplicate for each of the types
-
-
+  // Iterate until selected password length is reached
   while (password.length < passwordLength) {
     password += getRandomChar(userCharacters);
   }
@@ -83,24 +84,11 @@ function generatePassword() {
   return password;
 }
 
-
+// Generate a random character and round down
 function getRandomChar(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Assignment Code
