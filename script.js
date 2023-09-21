@@ -41,10 +41,10 @@ function generatePassword() {
     return "Please Try Again";
   }
 
-  var useLowerCaseLetters = window.confirm("Would you like to include lowercase letters in your password?")
-  var useUpperCaseLetters = window.confirm("Would you like to include uppercase letters in your password?")
-  var useNumbers = window.confirm("Would you like to include numbers in your password?")
-  var useSpecialCharacters = window.confirm("Would you like to include special characters in your password?")
+  var useLowerCaseLetters = window.confirm("Click OK to include lowercase letters in your password?")
+  var useUpperCaseLetters = window.confirm("Click OK to include uppercase letters in your password?")
+  var useNumbers = window.confirm("Click OK to include numbers in your password?")
+  var useSpecialCharacters = window.confirm("Click OK to include special characters in your password?")
   //Need to validate that at least one type is selected - if not, then prompt user to select at least one type
 
   if (!(useLowerCaseLetters) && !(useUpperCaseLetters) && !(useNumbers) && !(useSpecialCharacters)) {
