@@ -49,7 +49,7 @@ function generatePassword() {
   var useNumbers = window.confirm("Click OK to include numbers in your password?")
   var useSpecialCharacters = window.confirm("Click OK to include special characters in your password?")
   
-// Ensure that users selected at least one type from prompts and alert if not
+  // Ensure that users selected at least one type from prompts and alert if not
   if (!(useLowerCaseLetters) && !(useUpperCaseLetters) && !(useNumbers) && !(useSpecialCharacters)) {
 
     window.alert("Please select at least one value")
