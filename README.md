@@ -4,6 +4,10 @@
 
 This project is an app that generates a randomized password for the user, given their selection of password length within a specified range and their choice of whether to include uppercase or lowercase letters, numbers and selected special characters. Validation is included if the user enters a password length outside of the required range, or if they don't select one of the four value options. Once the input and selections are captured, the randomized password appears inside of the text box on the page.
 
+Link to application:
+
+https://kevinsmithseven.github.io/password-generator/  
+
 ## Usage
 
 Upon page load, the user can click the "Generate Password" button and is prompted to select a password length between 8 and 128 characters. Once that is entered, a series of four confirmation boxes appear at the top of the screen, where users will confirm whether they would like to include four types of values to include in the password. At least one of the four types must be selected. Once those selections are made, the app will generate a randomized password comprised of the value types the user selected and display it in the box above the "Generate Password" button.
