@@ -16,6 +16,7 @@ function isNumber(passwordLength) {
   return true;
 }
 
+
 // Function to determine if the value entered for the length is within range and alert user if not
 function numberIsInRange(passwordLength) {
 
